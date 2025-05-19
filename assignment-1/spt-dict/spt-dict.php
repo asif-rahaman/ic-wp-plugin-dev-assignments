@@ -17,10 +17,9 @@
  class Sparrow_Dictionary{
     const SPT_VERSION = '1.0.0.0';
     public function __construct(){
-        if(is_single()){
+      
         add_action('wp_enqueue_scripts',[$this, 'load_assets']);
         //add_action('admin_enqueue_scripts',[$this, 'load_admin_assets']);
-        }
     }
     function load_assets(){
         wp_enqueue_style(   'spt-dict-main', plugin_dir_url(__FILE__) .'assets/css/spt-dict-main.css',[],self::SPT_VERSION,);
